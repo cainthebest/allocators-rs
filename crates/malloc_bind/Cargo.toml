@@ -6,17 +6,23 @@
 # copied, modified, or distributed except according to those terms.
 
 [package]
-name = "object-alloc"
-version = "0.2.0"
+name = "malloc_bind"
+version = "0.1.0"
 authors = ["Joshua Liebow-Feeser <hello@joshlf.com>"]
 license = "Apache-2.0/MIT"
-description = "An object allocator trait for Rust."
+description = "A tool to implement the C malloc API using a Rust allocator."
 
-keywords = ["allocator", "object", "caching"]
-categories = ["algorithms", "caching", "memory-management"]
+keywords = ["allocator", "malloc", "bindings", "C", "ffi"]
+categories = ["external-ffi-bindings", "memory-management", "no-std"]
 
 readme = "README.md"
-documentation = "https://docs.rs/object-alloc"
-repository = "https://github.com/ezrosent/allocators-rs/tree/master/object-alloc"
+documentation = "https://docs.rs/malloc-bind"
+repository = "https://github.com/ezrosent/allocators-rs/tree/master/malloc-bind"
 
 exclude = ["appveyor.sh", "travis.sh"]
+
+[dependencies]
+errno = "0.2"
+lazy_static = { version = "1.0.0", features = ["spin_no_std"] }
+libc = "0.2"
+sysconf = ">= 0.3.3"

@@ -6,27 +6,21 @@
 # copied, modified, or distributed except according to those terms.
 
 [package]
-name = "alloc-fmt"
+name = "alloc_tls"
 version = "0.2.0"
 authors = ["Joshua Liebow-Feeser <hello@joshlf.com>"]
 license = "Apache-2.0/MIT"
-description = "Formatting utilities safe for use in an allocator."
+description = "Thread-local storage that is safe for use in implementing global allocators."
 
-keywords = ["format", "print", "assert", "panic", "allocator"]
-categories = ["memory-management", "no-std"]
+keywords = ["thread-local", "allocator", "tls"]
+categories = ["memory-management", "os"]
 
 readme = "README.md"
-documentation = "https://docs.rs/alloc-fmt"
-repository = "https://github.com/ezrosent/allocators-rs/tree/master/alloc-fmt"
-
-exclude = ["appveyor.sh", "travis.sh"]
+documentation = "https://docs.rs/alloc-tls"
+repository = "https://github.com/ezrosent/allocators-rs/tree/master/alloc-tls"
 
 [features]
-default = ["print-backtrace"]
-
-print-backtrace = ["backtrace"]
+dylib = []
 
 [dependencies]
-backtrace = { version = "0.3.3", optional = true }
-libc = "0.2"
-spin = "0.4.6"
+alloc-fmt = "0.2.0"

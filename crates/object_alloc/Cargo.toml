@@ -6,21 +6,17 @@
 # copied, modified, or distributed except according to those terms.
 
 [package]
-name = "alloc-tls"
+name = "object_alloc"
 version = "0.2.0"
 authors = ["Joshua Liebow-Feeser <hello@joshlf.com>"]
 license = "Apache-2.0/MIT"
-description = "Thread-local storage that is safe for use in implementing global allocators."
+description = "An object allocator trait for Rust."
 
-keywords = ["thread-local", "allocator", "tls"]
-categories = ["memory-management", "os"]
+keywords = ["allocator", "object", "caching"]
+categories = ["algorithms", "caching", "memory-management"]
 
 readme = "README.md"
-documentation = "https://docs.rs/alloc-tls"
-repository = "https://github.com/ezrosent/allocators-rs/tree/master/alloc-tls"
+documentation = "https://docs.rs/object-alloc"
+repository = "https://github.com/ezrosent/allocators-rs/tree/master/object-alloc"
 
-[features]
-dylib = []
-
-[dependencies]
-alloc-fmt = "0.2.0"
+exclude = ["appveyor.sh", "travis.sh"]

@@ -6,7 +6,7 @@
 # copied, modified, or distributed except according to those terms.
 
 [package]
-name = "slab-alloc"
+name = "slab_alloc"
 version = "0.1.1"
 authors = ["Joshua Liebow-Feeser <hello@joshlf.com>", "Eli Rosenthal <ezrosenthal@gmail.com>"]
 license = "Apache-2.0/MIT"

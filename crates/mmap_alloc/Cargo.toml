@@ -6,7 +6,7 @@
 # copied, modified, or distributed except according to those terms.
 
 [package]
-name = "mmap-alloc"
+name = "mmap_alloc"
 version = "0.2.0"
 authors = ["Joshua Liebow-Feeser <hello@joshlf.com>"]
 license = "Apache-2.0/MIT"

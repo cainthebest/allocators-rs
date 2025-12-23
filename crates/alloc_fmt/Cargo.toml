@@ -6,23 +6,27 @@
 # copied, modified, or distributed except according to those terms.
 
 [package]
-name = "malloc-bind"
-version = "0.1.0"
+name = "alloc_fmt"
+version = "0.2.0"
 authors = ["Joshua Liebow-Feeser <hello@joshlf.com>"]
 license = "Apache-2.0/MIT"
-description = "A tool to implement the C malloc API using a Rust allocator."
+description = "Formatting utilities safe for use in an allocator."
 
-keywords = ["allocator", "malloc", "bindings", "C", "ffi"]
-categories = ["external-ffi-bindings", "memory-management", "no-std"]
+keywords = ["format", "print", "assert", "panic", "allocator"]
+categories = ["memory-management", "no-std"]
 
 readme = "README.md"
-documentation = "https://docs.rs/malloc-bind"
-repository = "https://github.com/ezrosent/allocators-rs/tree/master/malloc-bind"
+documentation = "https://docs.rs/alloc-fmt"
+repository = "https://github.com/ezrosent/allocators-rs/tree/master/alloc-fmt"
 
 exclude = ["appveyor.sh", "travis.sh"]
 
+[features]
+default = ["print-backtrace"]
+
+print-backtrace = ["backtrace"]
+
 [dependencies]
-errno = "0.2"
-lazy_static = { version = "1.0.0", features = ["spin_no_std"] }
+backtrace = { version = "0.3.3", optional = true }
 libc = "0.2"
-sysconf = ">= 0.3.3"
+spin = "0.4.6"

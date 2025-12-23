@@ -1,14 +1,14 @@
 [workspace]
 members = [
-    "crates/alloc-fmt",
-    "crates/alloc-tls",
+    "crates/alloc_fmt",
+    "crates/alloc_tls",
     "crates/bagpipe",
     "crates/bsalloc",
     "crates/elfc",
     "crates/elfmalloc",
-    "crates/malloc-bind",
-    "crates/mmap-alloc",
-    "crates/object-alloc",
-    "crates/object-alloc-test",
-    "crates/slab-alloc",
+    "crates/malloc_bind",
+    "crates/mmap_alloc",
+    "crates/object_alloc",
+    "crates/object_alloc_test",
+    "crates/slab_alloc",
 ]

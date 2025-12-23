@@ -6,7 +6,7 @@
 # copied, modified, or distributed except according to those terms.
 
 [package]
-name = "object-alloc-test"
+name = "object_alloc_test"
 version = "0.1.0"
 authors = ["Joshua Liebow-Feeser <hello@joshlf.com>"]
 license = "Apache-2.0/MIT"
