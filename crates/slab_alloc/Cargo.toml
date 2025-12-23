@@ -40,8 +40,8 @@ hashmap-no-coalesce = []
 
 [dependencies]
 lazy_static = { version = "1.0.0", features = ["spin_no_std"] }
-mmap-alloc = { path = "../mmap-alloc" }
-object-alloc = { path = "../object-alloc" }
-object-alloc-test = { path = "../object-alloc-test" }
+mmap_alloc = { path = "../mmap_alloc" }
+object_alloc = { path = "../object_alloc" }
+object_alloc_test = { path = "../object_alloc_test" }
 rand = "0.3"
 sysconf = ">= 0.3.3"
