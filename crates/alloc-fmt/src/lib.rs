@@ -41,7 +41,7 @@
 //! [`alloc_debug_assert`]: macro.alloc_debug_assert.html
 
 #![no_std]
-#![feature(core_intrinsics)]
+
 
 #[cfg(feature = "print-backtrace")]
 extern crate backtrace;
