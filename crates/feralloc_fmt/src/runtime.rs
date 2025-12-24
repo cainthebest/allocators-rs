@@ -6,7 +6,7 @@ use {
     crate::backend::{Backend, CurrentBackend},
     core::{
         fmt::{self, Arguments},
-        hint::{likely, unlikely},
+        hint::{likely, spin_loop, unlikely},
         marker::PhantomData,
         sync::atomic::{AtomicU8, Ordering},
     },
@@ -62,7 +62,7 @@ impl Lock {
                     break;
                 }
 
-                core::hint::spin_loop();
+                spin_loop();
             }
 
             if STATE
@@ -83,7 +83,7 @@ fn enter_panic_or_abort() {
         CurrentBackend::write_err("panic while panicking\n");
         CurrentBackend::abort();
     }
-    // Best-effort unlock.
+
     STATE.fetch_and(!LOCKED, Ordering::Relaxed);
 }
 
@@ -155,7 +155,7 @@ pub fn fatal_panic(args: Arguments, file: &'static str, line: u32, col: u32) -> 
 
     CurrentBackend::write_err("thread panicked at '");
     {
-        let _g = Lock::acquire(); // non-locking once PANICKING is set
+        let _g = Lock::acquire();
         let mut w = Writer::ERR;
         let _ = fmt::write(&mut w, args);
     }
