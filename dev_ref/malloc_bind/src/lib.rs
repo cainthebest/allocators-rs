@@ -27,10 +27,7 @@
 //     the registered handler in various functions)
 
 #![no_std]
-#![feature(allocator_api)]
-#![feature(alloc)]
 #![feature(core_intrinsics)]
-#![feature(const_fn)]
 
 #[cfg(not(any(target_os = "linux", target_os = "macos", windows)))]
 compile_error!("malloc-bind only supports Linux, and Mac, and Windows");

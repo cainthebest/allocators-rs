@@ -1,0 +1,22 @@
+[package]
+name        = "feralloc_fmt"
+version     = "0.1.0"
+authors     = ["Joshua Liebow-Feeser <hello@joshlf.com>", "cainthebest <https://github.com/cainthebest>"]
+license     = "Apache-2.0/MIT"
+description = "Formatting for use in an allocator."
+edition     = "2024"
+
+[target.'cfg(unix)'.dependencies.libc]
+version          = "0.2.178"
+default-features = false
+
+[target.'cfg(windows)'.dependencies.windows-sys]
+version = "0.61.2"
+default-features = false
+features = [
+    "Win32_Foundation",
+    "Win32_System_IO",
+    "Win32_System_Console",
+    "Win32_System_Threading",
+    "Win32_Storage_FileSystem",
+]
